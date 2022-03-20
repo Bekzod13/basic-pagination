@@ -8,13 +8,14 @@ const Home = ({data}) => {
         setNoOfElement(noOfElement + 4);
     }
 
-    const slice = data.cardData.slice(0, noOfElement);
+    const slice = data.slice(0, noOfElement);
 
 
   return (
     <div className="py-4 container">
       <div className="row justify-content-center">
           {
+              slice.length === 0 ? <h1>Empty</h1>:
               slice.map((item, index)=>(
                 <div className="col-11 col-md-6 col-lg-3 mx-0 mb-4" key={index}>
                     <div className="card p-0 overflow-hidden h-100 shadow">
